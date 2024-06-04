@@ -20,7 +20,7 @@ public class StudentController{
     public Student getStudentById(@PathVariable int id){
         return studentManager.getById(id);
     }
-
+//kamanda Sullaiman testing
     @PutMapping("/{id}")
     public Student updateStudent(@PathVariable int id,@RequestBody Student student) {
         return studentManager.updateStudent(id, student);
