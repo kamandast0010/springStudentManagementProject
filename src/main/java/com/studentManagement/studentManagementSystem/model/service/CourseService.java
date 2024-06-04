@@ -2,8 +2,10 @@ package com.studentManagement.studentManagementSystem.model.service;
 
 import com.studentManagement.studentManagementSystem.model.domain.Course;
 
-public interface CourseService {
-    Course getById (Course course);
+import java.util.List;
 
-    Course getAllById (Course course);
+public interface CourseService {
+    Course getById (int id);
+
+    List<Course> getAll(Course course);
 }

@@ -5,17 +5,20 @@ import com.studentManagement.studentManagementSystem.model.domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentManager implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
+
     @Override
-    public Student getById(Student student) {
-        return studentRepository.getById();
+    public Student getById(int id) {
+        return studentRepository.findById(id).orElse(null);
     }
 
     @Override
-    public Student getAllById(Student student) {
-        return (Student) studentRepository.findAll();
+    public List<Student> getAllStudents(Student student) {
+        return studentRepository.findAll();
     }
 }
