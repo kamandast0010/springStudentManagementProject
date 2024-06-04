@@ -21,4 +21,9 @@ public class StudentManager implements StudentService {
     public List<Student> getAllStudents(Student student) {
         return studentRepository.findAll();
     }
+
+    @Override
+    public Student saveStudent(Student student) {
+        return null;
+    }
 }
