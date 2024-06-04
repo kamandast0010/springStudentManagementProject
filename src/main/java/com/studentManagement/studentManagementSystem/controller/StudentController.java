@@ -29,5 +29,9 @@ public class StudentController{
     public Student saveStudent(@RequestBody Student student) {
         return studentManager.saveStudent(student);
     }
+    @DeleteMapping("student/{id}")
+    public Student deleteStudent(@PathVariable int id){
+        return studentManager.deleteStudent(id);
+    }
 
 }
