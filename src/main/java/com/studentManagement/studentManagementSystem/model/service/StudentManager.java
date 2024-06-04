@@ -37,4 +37,9 @@ public class StudentManager implements StudentService {
         }
         return student;
     }
+
+    @Override
+    public Student deleteStudent(int id) {
+        return studentRepository.deleteById(id);
+    }
 }

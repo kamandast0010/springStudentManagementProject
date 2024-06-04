@@ -30,4 +30,9 @@ public class StudentController{
         return studentManager.saveStudent(student);
     }
 
+    @DeleteMapping("student/{id}")
+    public Student deleteStudent(@PathVariable int id){
+        return studentManager.deleteStudent(id);
+    }
+
 }

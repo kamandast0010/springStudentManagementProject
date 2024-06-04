@@ -12,4 +12,6 @@ public interface StudentService {
     Student saveStudent(Student student);
 
     Student updateStudent(int id,Student student);
+
+    Student deleteStudent(int id);
 }
