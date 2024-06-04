@@ -21,6 +21,7 @@ public class StudentController{
         return studentManager.getById(id);
     }
 
+    //KAMANDA
     @PutMapping("/{id}")
     public Student updateStudent(@PathVariable int id,@RequestBody Student student) {
         return studentManager.updateStudent(id, student);
