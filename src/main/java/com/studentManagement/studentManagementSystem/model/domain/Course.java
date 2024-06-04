@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int course_id;
+    private int id;
     private String course_name;
     private String description;
 
