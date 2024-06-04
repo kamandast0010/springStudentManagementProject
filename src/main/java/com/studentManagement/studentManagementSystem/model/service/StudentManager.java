@@ -14,7 +14,7 @@ public class StudentManager implements StudentService {
 
     @Override
     public Student getById(int id) {
-        return studentRepository.findById(id).orElse(null);
+        return studentRepository.findByStudentId(id);
     }
 
     @Override
@@ -25,5 +25,14 @@ public class StudentManager implements StudentService {
     @Override
     public Student saveStudent(Student student) {
         return null;
+    }
+
+    @Override
+    public Student updateStudent(int id,Student student) {
+        Student newStudent = studentRepository.findByStudentId(id);
+        if (newStudent != null){
+            studentRepository.save(student);
+        }
+        return student;
     }
 }
