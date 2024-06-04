@@ -8,4 +8,5 @@ public interface CourseService {
     Course getById (int id);
 
     List<Course> getAll(Course course);
+
 }
