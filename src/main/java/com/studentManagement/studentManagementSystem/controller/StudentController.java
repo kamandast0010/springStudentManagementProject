@@ -22,8 +22,12 @@ public class StudentController{
     }
 
     @PutMapping("/{id}")
-    public Student updateStudent(@PathVariable int id,@RequestBody Student student){
-        return studentManager.updateStudent(id,student);
+    public Student updateStudent(@PathVariable int id,@RequestBody Student student) {
+        return studentManager.updateStudent(id, student);
+    }
+    @PostMapping
+    public Student saveStudent(@RequestBody Student student) {
+        return studentManager.saveStudent(student);
     }
 
 }
