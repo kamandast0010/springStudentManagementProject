@@ -4,7 +4,6 @@ import com.studentManagement.studentManagementSystem.model.dao.StudentRepository
 import com.studentManagement.studentManagementSystem.model.domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class StudentManager implements StudentService {
 
     @Override
     public Student getById(int id) {
-        return studentRepository.findByStudentId(id);
+        return studentRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -31,7 +30,7 @@ public class StudentManager implements StudentService {
 
     @Override
     public Student updateStudent(int id,Student student) {
-        Student newStudent = studentRepository.findByStudentId(id);
+        Student newStudent = studentRepository.findById(id).orElse(null);
         if (newStudent != null){
             studentRepository.save(student);
         }
@@ -40,6 +39,7 @@ public class StudentManager implements StudentService {
 
     @Override
     public Student deleteStudent(int id) {
-        return studentRepository.deleteById(id);
+         studentRepository.deleteById(id);
+         return null;
     }
 }

@@ -10,8 +10,9 @@ import java.util.List;
 @RestController
 public class StudentController{
     @Autowired
-    private StudentManager studentManager;
-    @GetMapping("/student")
+   private StudentManager studentManager;
+
+    @GetMapping("/students")
     public List<Student> getAllStudent(Student student){
         return studentManager.getAllStudents(student);
     }
@@ -21,7 +22,7 @@ public class StudentController{
         return studentManager.getById(id);
     }
 //kamanda Sullaiman testing
-    @PutMapping("/{id}")
+    @PutMapping("update/{id}")
     public Student updateStudent(@PathVariable int id,@RequestBody Student student) {
         return studentManager.updateStudent(id, student);
     }

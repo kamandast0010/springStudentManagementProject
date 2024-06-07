@@ -9,4 +9,10 @@ public interface CourseService {
 
     List<Course> getAll(Course course);
 
+    Course newCourse(Course course);
+
+    Course updateCourse(int id,Course course);
+
+    Course deleteById(int id);
+
 }

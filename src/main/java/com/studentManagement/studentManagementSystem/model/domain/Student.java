@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 
 @Entity
-@Table(name = "Student_Table")
+@Table(name = "student_table")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,4 +25,8 @@ public class Student {
     private String contact;
     private String address;
     private String gender;
+
+    @OneToMany
+    @JoinColumn(name = "course_id")
+    private List<Course> course;
 }
